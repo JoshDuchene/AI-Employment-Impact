@@ -1,7 +1,7 @@
 # AI-Employment-Impact
-Examining the relationship between exposure to AI and changes in employment, by industry, in the US. This analysis is being conducted using BLS data. 
+Examining the relationship between exposure to AI and changes in employment, by occupation, in the US. This analysis is being conducted using BLS (Bureau of Labor Statistics) data. 
 
-The general question I'll be testing is this: Have industries that are highly exposed to AI seen greater changes in total employment over the past few years compared to industries that are less exposed?
+The general question I'll be testing is this: Have occupations that are highly exposed to AI seen greater changes in total employment over the past few years compared to occupations that are less exposed?
 
 
 These are the data sources I plan to use:
