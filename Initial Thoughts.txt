@@ -1,0 +1,21 @@
+Additional questions to address with this dataset specifically:
+
+1. Does the 2025 OEWS data roughly align with the employment data from the AI Exposure file?
+2. What level of aggregation should I do by occupation?
+    - How many occupations actually do get broken down to the lowest level? (meaningfully, so not just having 4 levels that are all called the same thing)
+    - For those that do get broken down, how small are the resulting employment numbers there?
+    - How do I handle the really small ones? just move up a level of aggregation for those occupations? for all occupations? it seems like I would have to do it for all, so I'm comparing apples and oranges.
+    - I'm wondering if it would make sense to look at the percent changes for some of these... basically the concern is, if thsese small occupations occasionally have like 100% changes, just because it's like 3,000 to 6,000, which could very easily just be a measurement error kind of thing, that could skew the data a lot
+        - I'd need to be very careful to do this in a way where I don't end up making the decision based on what i'm seeing.
+        - it might make sense to just basically calculate the percent differences for each, and then look at the distribution, and pick a reasonable upper/lower limit, and just cap values there.
+    - For those at are broken down that much, do the AI exposure labels vary, or no? if they basically never do, rolling them up is an easy option if it makes the analysis cleaner. If they vary, and we do need to roll them up, is just treating the 4 labels as 1, 2, 3, 4, and getting the weighted average acceptable?
+3. How am I doing the comparison? just, getting the absolute percent change for each occupation, and getting the average of those by category? an unweighted average? unweighted and standard weighting both seem not ideal... because either the most common jobs swamp the whole thing, or you end up with a bunch of tiny occupations representing like 75% of the volume, and 10% of the total employment... I'm wondering if logarithm/squareroot weighting is ever a thing... 
+3. What categories am I actually comparing?
+    Currently considering:
+    - * Very High vs (all else)
+    - * Very High vs Low
+
+    Before looking at the data, my thoughts are that, in theory very high vs low should be the starkest comparison, where, if we see a difference at all, it would be there. but i'm also thinking that, since there's been a huge increase in data center production, a lot of those manufacturing jobs are likely to be rated as having 'low impact', and so that sector might actually be seeing a large increase right now, and I guess maybe it's an open question of whether that'll be sustained growth, or temporary, just until they've built enough. all that to say, combining the 3 lower categories together would help wash that effect out.
+
+    I think i'm sticking with those 2 comparisons, unless the data makes it very clear that I need to revise. I could obviously make comparisons of like the top 2 and the bottom 2, or any other combination, but that would easily lead to the multiple hypothesis testing issue, and also just an interpretation blackhole.
+
